@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox fx:controller="com.justbelieveinmyself.solvingslae.MainController" alignment="TOP_CENTER"
+      xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+    <GridPane style="-fx-padding: 10" alignment="TOP_CENTER" hgap="10" xmlns="http://javafx.com/javafx/11.0.1"
+              xmlns:fx="http://javafx.com/fxml/1">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="134.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="134.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="134.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="134.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="134.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="134.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="134.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="134.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="50.0"/>
+        </rowConstraints>
+        <children>
+            <Label text="Columns" GridPane.columnIndex="0"/>
+            <TextField fx:id="columnsTextField" GridPane.columnIndex="1"/>
+
+            <Label text="Rows" GridPane.columnIndex="2"/>
+            <TextField fx:id="rowsTextField" GridPane.columnIndex="3"/>
+            <Button onMousePressed="#createGrid" GridPane.columnIndex="4" text="Create"/>
+            <Button onMousePressed="#fillGridWithRandomNumbers" GridPane.columnIndex="5" text="Fill"/>
+            <Button onMousePressed="#solveUsingGaussianElimination" GridPane.columnIndex="6" text="Solve"/>
+            <Button onMousePressed="#gradientDescent" GridPane.columnIndex="7" text="Gradient"/>
+        </children>
+    </GridPane>
+    <GridPane style="-fx-padding: 10"  vgap="10">
+        <rowConstraints>
+            <RowConstraints maxHeight="300" prefHeight="40" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="300" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="70"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="70"/>
+        </columnConstraints>
+        <Label text="Коэффициенты при неизвестных" GridPane.columnIndex="0"/>
+        <Label text="Свободные коэффициенты" GridPane.columnIndex="1"/>
+        <Label text="Результат" GridPane.columnIndex="2"/>
+        <GridPane fx:id="leftGridPane" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        </GridPane>
+        <GridPane fx:id="rightGridPane" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        </GridPane>
+        <GridPane fx:id="resultGridPane" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        </GridPane>
+    </GridPane>
+</VBox>
+
